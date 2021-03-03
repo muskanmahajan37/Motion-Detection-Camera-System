@@ -13,8 +13,9 @@ while cap.isOpened() : # Loop to display every single frame from the captured vi
     contours, _ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
-
     cv2.imshow("Motion Detection Camera System", frame1)
+    frame1 = frame2
+    ret, frame2 = cap.read()
     if cv2.waitKey(1) & 0xFF == ord('q'): #The program quits when the user presses "q"
         break
 
