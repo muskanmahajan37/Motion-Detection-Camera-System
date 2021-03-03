@@ -10,7 +10,15 @@ while cap.isOpened() : # Loop to draw contours on every moving object
     _, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY) # is pixel intensity is greater than set threshold, value set is set to 255 else 0
     dilated = cv2.dilate(thresh, None, iterations=3) #Increases the size of the foreground/white region
     contours, _ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    
+
+    for contour in contours:
+        (x, y, w, h) = cv2.boundingRect(contour)
+        
+        if cv2.contourArea(contour) < 1000:
+            continue
+        cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.putText(frame1, "Status: {}".format("Movement"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
     # cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
     cv2.imshow("Motion Detection Camera System", frame1)
     frame1 = frame2
