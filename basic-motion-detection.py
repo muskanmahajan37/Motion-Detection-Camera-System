@@ -6,7 +6,7 @@ ret, frame2 = cap.read()
 
 while cap.isOpened() : # Loop to display every single frame from the captured video
     diff = cv2.absdiff(frame1,frame2)
-    gray = cv2.cvtColor(diff, cv2.COLOR.BGR2GRAY)
+    gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5,5), 0)
     _, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
     dilated = cv2.dilate(thresh, None, iterations=3)
