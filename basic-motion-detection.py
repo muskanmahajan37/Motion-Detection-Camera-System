@@ -3,7 +3,7 @@ cap = cv2.VideoCapture(0) # Capturing the video via default camera
 ret, frame1 = cap.read()
 ret, frame2 = cap.read()
 
-while cap.isOpened() : # Loop to draw contours on every moving object
+while cap.isOpened() : # Loop to draw rectangles on large moving object
     diff = cv2.absdiff(frame1,frame2)
     gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5,5), 0) # to make the image pixels black and white
@@ -14,7 +14,7 @@ while cap.isOpened() : # Loop to draw contours on every moving object
     for contour in contours:
         (x, y, w, h) = cv2.boundingRect(contour)
         
-        if cv2.contourArea(contour) < 1000:
+        if cv2.contourArea(contour) < 10000:
             continue
         cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
         cv2.putText(frame1, "Status: {}".format("Movement"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
