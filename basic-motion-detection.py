@@ -1,9 +1,10 @@
 import cv2
-import time
+from playsound import playsound
 cap = cv2.VideoCapture(0) # Capturing the video via default camera
 ret, frame1 = cap.read()
-time.sleep(0.5) #delys 5seconds
 ret, frame2 = cap.read()
+alarmStatus=0;
+
 
 while cap.isOpened() : # Loop to draw rectangles on large moving object
     diff = cv2.absdiff(frame1,frame2)
@@ -16,10 +17,13 @@ while cap.isOpened() : # Loop to draw rectangles on large moving object
     for contour in contours:
         (x, y, w, h) = cv2.boundingRect(contour)
         
-        if cv2.contourArea(contour) < 6000:
+        if cv2.contourArea(contour) < 4000:
             continue
         cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
-        cv2.putText(frame1, "Status: {}".format("Movement"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+        cv2.putText(frame1, "Status: {}".format("Intruder"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+        if(alarmStatus == 0):
+            playsound('alarm.mp3')
+            alarmStatus = 1
 
     # cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
     cv2.imshow("Motion Detection Camera System", frame1)

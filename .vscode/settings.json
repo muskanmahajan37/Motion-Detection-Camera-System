@@ -1,0 +1,15 @@
+{
+    "AREPL.pythonPath": "",
+    "AREPL.pythonOptions": [
+
+        "-u"
+    ],
+    "django.snippets.exclude": [
+
+
+        "cms",
+        "wagtail"
+    ],
+    "python.autoComplete.extraPaths": ["./path-to-your-code"]
+
+}
