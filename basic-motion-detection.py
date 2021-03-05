@@ -24,6 +24,7 @@ while cap.isOpened() : # Loop to draw rectangles on large moving object
         if(alarmStatus == 0):
             playsound('alarm.mp3')
             alarmStatus = 1
+            break
 
     # cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
     cv2.imshow("Motion Detection Camera System", frame1)
