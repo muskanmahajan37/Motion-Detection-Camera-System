@@ -60,7 +60,7 @@ while cap.isOpened() : # Loop to draw rectangles on large moving object
                 #     threading.Thread(target = play_alarm_sound_function).start()
                 #     alarm_triggered = True
 
-    cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
+    # cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
     cv2.imshow("Motion Detection Camera System", frame1)
     frame1 = frame2
     ret, frame2 = cap.read()
