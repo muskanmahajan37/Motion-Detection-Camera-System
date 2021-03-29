@@ -34,7 +34,8 @@ def login_validation():
         session['user_id']=users[0][0]
         return render_template("index.html")
     else:
-        return render_template("login.html")
+        warning="Username or password is incorrect."
+        return render_template("login.html", warning=warning)
 
 @app.route("/register_user", methods=['POST'])
 def register_user():
