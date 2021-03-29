@@ -27,7 +27,7 @@ def send_mail_function():
         server.starttls()
         server.login(senderEmail, senderPassword)
         server.sendmail(senderEmail, recipientEmail, message)
-        print("sent to {}".format(recipientEmail))
+        print("Warning message has been sent to {}".format(recipientEmail))
         server.close()
     except Exception as e:
     	print(e)

@@ -39,8 +39,9 @@
         </div>
 
 
-        <div class="col-md-4" style="margin-top: 150px">
-          <div class="card">
+        <div class="col-md-4" style="margin-top: 70px">
+           <h1 class="text-light text-center">Login Here</h1>
+          <div class="card ">
               <div class="card-body">
                   <form class="form" method="post" action="/login_validation">
                        <label>Username</label><br>
@@ -50,6 +51,7 @@
                        <input type="password" class="form-control" name="password"><br><br>
                        <input type="submit" class="btn btn-primary btn-lg form-control" value="Login">
                     </form>
+                    <p class="mt-2 text-danger">{{warning}} Try again!</p>
                   <!--  <p class="mt-2">NOt a member? <a href="/register">Creat Account</a></p>-->
                 </div> 
             </div>
