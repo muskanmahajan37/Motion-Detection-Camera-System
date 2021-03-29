@@ -8,6 +8,7 @@ app.secret_key=os.urandom(24)
 conn=mysql.connector.connect(host="localhost", user="root",password="",database="MDCS")
 cursor=conn.cursor()
 
+
 @app.route('/')
 def login():
     return render_template('login.html')
@@ -34,7 +35,7 @@ def login_validation():
         session['user_id']=users[0][0]
         return render_template("index.html")
     else:
-        warning="Username or password is incorrect."
+        warning="Username or password is incorrect, try again!"
         return render_template("login.html", warning=warning)
 
 @app.route("/register_user", methods=['POST'])
