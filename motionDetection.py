@@ -1,5 +1,4 @@
 import cv2
-import cv2
 import playsound
 import threading
 lock = threading.Lock() #This will help us perform synchronization; ex:to stop other threads from sending more emails
@@ -36,7 +35,6 @@ def play_alarm_sound_function():
 
 class MotionDetection(object):
 
-
     def __init__(self):
         self.video = cv2.VideoCapture(0)
 
@@ -63,10 +61,10 @@ class MotionDetection(object):
             if cv2.contourArea(contour) > 1000:
                  cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
                  cv2.putText(frame1, "Status: {}".format("Intruder"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-                 with lock:
-                     if not email_sent:
-                        threading.Thread(target=send_mail_function).start()
-                        email_sent = True
+                #  with lock:
+                #      if not email_sent:
+                #         threading.Thread(target=send_mail_function).start()
+                #         email_sent = True
         # cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
         ret, jpeg = cv2.imencode('.jpg', frame1)
         return jpeg.tobytes()
