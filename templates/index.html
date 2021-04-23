@@ -23,34 +23,38 @@ body{
   nav{
     font-size: 1.5em;
   }
-  .welcome-header-text{
-    font-weight: 1em;
-    font-weight: bold;
-    color: #fffffe;
-  }
-  .welcome-intro-text{
-    font-weight: 400;
-    font-size: 1.8em;
-    color: #fffffe;
-  }
   .brand-name{
     font-weight: bold;
     font-size: 2.4em;
   }
-  .login-link{
-    font-size: 18px;
-    color: rgb(0, 47, 255);
-    text-decoration: none;
-  }
-  .login-link:hover{
-    text-decoration: underline;
-  }
-  label{
-    font-size: 16px;
-  }
-  .remember-container{
+  .header-container{
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    color: #fffffe;
+    margin-bottom: 1.5em;
+  }
+  .cameras-title{
+    font-size: 2em;
+  }
+  .plus-button{
+    border: none;
+    background-color: #fffffe;
+    font-size: 2em;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 15px;
+  }
+
+  .one-camera{
+    background-color: #fffffe;
+    padding: 10px;
+    margin: 1.5em 0;
+    cursor: pointer;
   }
     </style>
   </head>
@@ -68,10 +72,10 @@ body{
       <a class="me-3 py-2 text-light text-decoration-none" href="#">Features</a>
       <a class="me-3 py-2 text-light text-decoration-none" href="#">Enterprise</a>
       <a class="me-3 py-2 text-light text-decoration-none" href="#">Support</a>
-    </nav>
-    <div class="icon dropdown" id="bell"> <img src="https://i.imgur.com/AC7dgLA.png" alt=""> </div>
-                       
-    <a class="btn btn-outline-light" href="/logout">Logout</a>
+      <a class="me-3 py-2 text-light text-decoration-none" href="#">Hee</a>
+      <a class="btn btn-outline-light" href="/logout">Logout</a>
+
+    </nav>                       
 
   </header>
   
@@ -83,20 +87,27 @@ body{
 
        <div class="col-md-5 mt-4">
           <div class="comeras-container">
-            <h3>Your cameras</h3>
-            <div class="card">
-              <div class="card-body bg-info m-1">
-                 <h2>Camera #1</h2>
-                 <h4>Inactive</h4>
-              </div>             
-           </div>   
- 
-            <div class="card">
-              <div class="card-body bg-success m-1">
-                 <h2>Camera #2</h2>
-                 <h4>Inactive</h4>
-              </div>             
-           </div> 
+            <div class="header-container">
+              <h3 class="cameras-title">Your cameras</h3>
+              <button class="plus-button">&plus;</button>
+            </div>
+             
+            <div class="camera-displayer">
+              <div class="one-camera">
+                <div class="camera-body">
+                   <h2>Camera #1</h2>
+                   <h4>Inactive</h4>
+                </div>             
+             </div>   
+   
+              <div class="one-camera">
+                <div class="camera-body">
+                   <h2>Camera #2</h2>
+                   <h4>Inactive</h4>
+                </div>             
+             </div>
+            </div>
+
           </div>
        </div>
        </div>
