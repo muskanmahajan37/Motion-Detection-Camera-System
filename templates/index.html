@@ -10,28 +10,59 @@
 
     <title>Home</title>
     <style>
-.icon img {
-    cursor: pointer;
-    margin-right: 30px;
-    margin-left: 20px;
-    width: 26px;
-}
-
-.icon img:hover {
-    opacity: .7
-}
-
+body{
+    background-color: #111828;
+    /* background: linear-gradient(to left top, #2f416b, #2a3b61, #263557, #212f4d, #1d2944); */
+    font-family: 'Inter', sans-serif;
+    font-size: 67.5%;
+  }
+  header{
+   border-bottom: 2px solid rgba(31,41,55,1);
+   padding-bottom: 10px;
+  }
+  nav{
+    font-size: 1.5em;
+  }
+  .welcome-header-text{
+    font-weight: 1em;
+    font-weight: bold;
+    color: #fffffe;
+  }
+  .welcome-intro-text{
+    font-weight: 400;
+    font-size: 1.8em;
+    color: #fffffe;
+  }
+  .brand-name{
+    font-weight: bold;
+    font-size: 2.4em;
+  }
+  .login-link{
+    font-size: 18px;
+    color: rgb(0, 47, 255);
+    text-decoration: none;
+  }
+  .login-link:hover{
+    text-decoration: underline;
+  }
+  label{
+    font-size: 16px;
+  }
+  .remember-container{
+    display: flex;
+    align-items: center;
+  }
     </style>
   </head>
-  <body class="bg-nav">
-<header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom ms-5 me-5 mt-2">
+  <body class="container-fluid">
+<header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 ms-5 me-5 mt-2">
     <a href="/" class="d-flex align-items-center text-light text-decoration-none">
       
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
   <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
   <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
 </svg>
-      <span class="fs-4">MDCS</span>
+      <span class="brand-name">MDCS</span>
     </a>
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
       <a class="me-3 py-2 text-light text-decoration-none" href="#">Features</a>
@@ -40,14 +71,14 @@
     </nav>
     <div class="icon dropdown" id="bell"> <img src="https://i.imgur.com/AC7dgLA.png" alt=""> </div>
                        
-    <a class="btn btn-outline-light btn-lg" href="/logout">Logout</a>
+    <a class="btn btn-outline-light" href="/logout">Logout</a>
 
   </header>
   
   <div class="container">
        <div class="row mt-5 mb-5 ">
            <div class="col-md-7">
-                  <img id="img" src = "{{ url_for('video_feed') }}">
+                  <!-- <img id="img" src = "{{ url_for('video_feed') }}"> -->
            </div>
 
        <div class="col-md-5 mt-4">
@@ -58,20 +89,22 @@
              </div>
           </div>
 
-           <div class="card m-3">
-             <div class="card-body bg-info m-1">
-                <h2>Camera #1</h2>
-                <h4>Inactive</h4>
-             </div>             
-          </div>   
-
-           <div class="card m-3">
-             <div class="card-body bg-success m-1">
-                <h2>Camera #2</h2>
-                <h4>Inactive</h4>
-             </div>             
-          </div> 
-
+          <div class="comeras-container">
+            <h2>Your cameras</h2>
+            <div class="card">
+              <div class="card-body bg-info m-1">
+                 <h2>Camera #1</h2>
+                 <h4>Inactive</h4>
+              </div>             
+           </div>   
+ 
+            <div class="card">
+              <div class="card-body bg-success m-1">
+                 <h2>Camera #2</h2>
+                 <h4>Inactive</h4>
+              </div>             
+           </div> 
+          </div>
        </div>
        </div>
 
