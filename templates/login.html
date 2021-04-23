@@ -11,32 +11,7 @@
     <title>Login - Motion Detection Camera System</title>
 
     <style>
-      body{
-        background-color: #111828;
-        font-family: 'Inter', sans-serif;
-        font-size: 67.5%;
-      }
-      header{
-       border-bottom: 2px solid rgba(31,41,55,1);
-       padding-bottom: 10px;
-      }
-      nav{
-        font-size: 1.5em;
-      }
-      .welcome-header-text{
-        font-weight: 1em;
-        font-weight: bold;
-        color: #fffffe;
-      }
-      .welcome-intro-text{
-        font-weight: 400;
-        font-size: 1.8em;
-        color: #fffffe;
-      }
-      .brand-name{
-        font-weight: bold;
-        font-size: 2.4em;
-      }
+  
     </style>
   </head>
   <body class="container-fluid">
@@ -62,22 +37,32 @@
         <div class="col-md-8" style="margin-top: 200px">
              <h2 class="text-light welcome-header-text">Motion Detection Camera System<h2>
              <h3 class="text-light welcome-intro-text">Protect your property with reliable technology that gives you <br/> a report on each label that might damage it.</h3>
+             <a href="" class="login-link">Get to know more &rarr;</a>
         </div>
 
 
         <div class="col-md-4" style="margin-top: 70px">
-           <h1 class="text-light text-center">Login Here</h1>
           <div class="card ">
               <div class="card-body">
+                <h1 class="text-center text-dark">Login</h1>
                   <form class="form" method="post" action="/login_validation">
                        <label>Username</label><br>
-                       <input type="username" class="form-control" name="username"><br>
+                       <input type="username" class="form-control" name="username" placeholder="username"><br>
 
                        <label>Password</label><br>
-                       <input type="password" class="form-control" name="password"><br><br>
+                       <input type="password" class="form-control" name="password" placeholder="passowrd"><br>
+                       <div class="remember-container">
+                        <input type="checkbox" class=""/>
+                        <label> Remember me.</label>
+                       </div>
+                       <p class="mt-2 text-danger">{{warning}}</p>
                        <input type="submit" class="btn btn-primary btn-lg form-control" value="Login">
+                       <br/>
+                       <p class="" style="font-size: 1.2em;">
+                         <br/>
+                         Wish to get any account? <a href="/register_user">Contact our team</a> to claim your account or <a href="">know more</a>, how to claim account? 
+                       </p>
                     </form>
-                    <p class="mt-2 text-danger">{{warning}}</p>
                   <!--  <p class="mt-2">NOt a member? <a href="/register">Creat Account</a></p>-->
                 </div> 
             </div>
