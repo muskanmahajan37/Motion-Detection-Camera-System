@@ -1,0 +1,42 @@
+body{
+    background-color: #111828;
+    /* background: linear-gradient(to left top, #2f416b, #2a3b61, #263557, #212f4d, #1d2944); */
+    font-family: 'Inter', sans-serif;
+    font-size: 67.5%;
+  }
+  header{
+   border-bottom: 2px solid rgba(31,41,55,1);
+   padding-bottom: 10px;
+  }
+  nav{
+    font-size: 1.5em;
+  }
+  .welcome-header-text{
+    font-weight: 1em;
+    font-weight: bold;
+    color: #fffffe;
+  }
+  .welcome-intro-text{
+    font-weight: 400;
+    font-size: 1.8em;
+    color: #fffffe;
+  }
+  .brand-name{
+    font-weight: bold;
+    font-size: 2.4em;
+  }
+  .login-link{
+    font-size: 18px;
+    color: rgb(0, 47, 255);
+    text-decoration: none;
+  }
+  .login-link:hover{
+    text-decoration: underline;
+  }
+  label{
+    font-size: 16px;
+  }
+  .remember-container{
+    display: flex;
+    align-items: center;
+  }

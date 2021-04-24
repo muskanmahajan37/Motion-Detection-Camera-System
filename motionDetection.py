@@ -28,9 +28,9 @@ def send_mail_function():
 
 # threading.Thread(target=send_mail_function).start()
 
-def play_alarm_sound_function():
-    	while True:
-		playsound.playsound('Alarm Sound.mp3',True)
+# def play_alarm_sound_function():
+#     	while True:
+# 		playsound.playsound('Alarm Sound.mp3',True)
 
 
 class MotionDetection(object):
