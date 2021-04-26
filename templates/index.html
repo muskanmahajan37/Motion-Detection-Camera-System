@@ -82,6 +82,17 @@ body{
   }
   .dropdown-item{
     cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .view-more{
+    text-align: center;
+    color: #0342d6;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .view-more a{
+    cursor: pointer;
   }
     </style>
   </head>
@@ -104,16 +115,20 @@ body{
       <a class="me-3 py-2 text-light text-decoration-none icons dropdown-trigger" href="#"><i class="fa fa-bell"></i></a>
       <div class="dropdown-content">
          <div class="dropdown-item">
-            <h>Intruder dectected!</h><br/>
-            <span>camera: <a href="/home">camera #1</a></span>
+            <h>Intruder dectected!</h>
+            <span>camera: <a href="/home">camera #1</a></span><br/>
+            <p>On: 12:00</p>
          </div>
          <div class="dropdown-item">
-          <h>Intruder dectected!</h><br/>
+          <h>Intruder dectected!</h>
           <span>camera: <a href="/dmada">camera #1</a></span>
        </div>
        <div class="dropdown-item">
-        <h>Intruder dectected!</h><br/>
+        <h>Intruder dectected!</h>
         <span>camera: <a href="/daokdlamkdla">camera #1</a></span>
+     </div>
+     <div class="view-more">
+         <a>View More...</a>
      </div>
       </div>
     </div>
@@ -123,7 +138,7 @@ body{
   <div class="container">
        <div class="row mt-5 mb-5 ">
            <div class="col-md-7">
-                  <!-- <img id="img" src = "{{ url_for('video_feed') }}"> -->
+                  <img id="img" src = "{{ url_for('video_feed') }}">
            </div>
 
        <div class="col-md-5 mt-4">
