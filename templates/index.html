@@ -63,9 +63,12 @@ body{
   .dropdown{
     position: relative;
   }
-  .dropdown-trigger:hover + .dropdown-content{
+  .dropdown-trigger:focus + .dropdown-content{
      display: block;
   }
+  /* .dropdown-trigger:not(:focus)+ .dropdown-content{
+    display: none;
+  } */
   .dropdown-content{
     display: none;
     position: absolute;
@@ -74,7 +77,11 @@ body{
     right: 50%;
     transform: translate(-50%,-1%);
     width: max-content;
-    font-size: 24px;
+    top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  .dropdown-item{
+    cursor: pointer;
   }
     </style>
   </head>
@@ -98,15 +105,15 @@ body{
       <div class="dropdown-content">
          <div class="dropdown-item">
             <h>Intruder dectected!</h><br/>
-            <span>camera: <a href="">camera #1</a></span>
+            <span>camera: <a href="/home">camera #1</a></span>
          </div>
          <div class="dropdown-item">
           <h>Intruder dectected!</h><br/>
-          <span>camera: <a href="">camera #1</a></span>
+          <span>camera: <a href="/dmada">camera #1</a></span>
        </div>
        <div class="dropdown-item">
         <h>Intruder dectected!</h><br/>
-        <span>camera: <a href="">camera #1</a></span>
+        <span>camera: <a href="/daokdlamkdla">camera #1</a></span>
      </div>
       </div>
     </div>
