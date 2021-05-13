@@ -26,13 +26,6 @@ def send_mail_function():
     except Exception as e:
     	print(e)
 
-# threading.Thread(target=send_mail_function).start()
-
-# def play_alarm_sound_function():
-#     	while True:
-# 		playsound.playsound('Alarm Sound.mp3',True)
-
-
 class MotionDetection(object):
 
     def __init__(self):
