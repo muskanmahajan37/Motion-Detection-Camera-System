@@ -1,7 +1,6 @@
 import cv2
 import playsound
 import threading
-import mysql.connector
 lock = threading.Lock() #This will help us perform synchronization; ex:to stop other threads from sending more emails
 
 from email.mime.multipart import MIMEMultipart
