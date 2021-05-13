@@ -1,8 +1,8 @@
 import cv2
 import playsound
 import threading
-lock = threading.Lock() #This will help us perform synchronization; ex:to stop other threads from sending more emails
-
+#This will help us perform synchronization; ex:to stop other threads from sending more emails
+lock = threading.Lock() 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
@@ -25,13 +25,6 @@ def send_mail_function():
         server.close()
     except Exception as e:
     	print(e)
-
-# threading.Thread(target=send_mail_function).start()
-
-# def play_alarm_sound_function():
-#     	while True:
-# 		playsound.playsound('Alarm Sound.mp3',True)
-
 
 class MotionDetection(object):
 
