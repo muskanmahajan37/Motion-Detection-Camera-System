@@ -1,8 +1,8 @@
 import cv2
 import playsound
 import threading
-lock = threading.Lock() #This will help us perform synchronization; ex:to stop other threads from sending more emails
-
+#This will help us perform synchronization; ex:to stop other threads from sending more emails
+lock = threading.Lock() 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
