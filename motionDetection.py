@@ -54,8 +54,9 @@ class MotionDetection(object):
             if cv2.contourArea(contour) > 1000:
                  cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
                  cv2.putText(frame1, "Status: {}".format("Intruder"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-                 
+                #  read_db_config("motion detected in class", '2021-05-12 11:19:29', 1,1)
                 #  with lock:
+                #  read_db_config("motion detected in class", '2021-05-12 11:19:29', 1,1)
                 #      if not email_sent:
                 #         threading.Thread(target=send_mail_function).start()
                 #         email_sent = True
