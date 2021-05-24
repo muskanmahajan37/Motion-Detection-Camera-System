@@ -27,7 +27,7 @@ def insert_notification(message,time, userID, camID):
         conn.close()
 
 def main():
-   insert_notification('Testing Notification','2021-05-12 11:19:29', 1, 1)
+   insert_notification('Today\'s Notification','2021-05-12 11:19:29', 1, 2)
 
 if __name__ == '__main__':
     main()

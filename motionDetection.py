@@ -1,11 +1,11 @@
 import cv2
 import playsound
-import threading
-#This will help us perform synchronization; ex:to stop other threads from sending more emails
+import threading#This will help us perform synchronization; ex:to stop other threads from sending more emails
 lock = threading.Lock() 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+from notification import insert_notification
 
 def send_mail_function():
     senderEmail = "robeehacks@gmail.com"
