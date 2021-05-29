@@ -46,6 +46,8 @@ def login_validation():
 
     if len(users)>0:
         session['user_id']=users[0][0]
+        print ("User id: " )
+        # print (session['user_id'])
         return render_template("index.html")
     else:
         warning="Username or password is incorrect, try again!"
