@@ -54,12 +54,7 @@ class MotionDetection(object):
                 cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
                 cv2.putText(frame1, "Status: {}".format("Intruder"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
                 insert_notification("finally sent notification", '2021-05-12 11:19:29', 2,1)
-                #  with lock:
-                #  read_db_config("motion detected in class", '2021-05-12 11:19:29', 1,1)
-                #      if not email_sent:
-                #         threading.Thread(target=send_mail_function).start()
-                #         email_sent = True
-        # cv2.drawContours(frame1, contours, -1, (0,255,0), 2) 
+                
         ret, jpeg = cv2.imencode('.jpg', frame1)
         return jpeg.tobytes()
         frame1 = frame2
