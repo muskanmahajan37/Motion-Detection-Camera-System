@@ -8,8 +8,7 @@ app.secret_key=os.urandom(24)
 
 conn=mysql.connector.connect(host="localhost", user="root",password="",database="MDCS")
 cursor=conn.cursor()
-camID =0
-notification = "Intruder Detected on your camera: #"
+
 def gen(camera):
     while True:
         frame = camera.get_frame()
@@ -46,7 +45,7 @@ def login_validation():
 
     if len(users)>0:
         session['user_id']=users[0][0]
-        print ("User id: " )
+        # print ("User id: " )
         # print (session['user_id'])
         return render_template("index.html")
     else:

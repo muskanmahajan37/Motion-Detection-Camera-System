@@ -6,10 +6,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 from notification import insert_notification
-
 def send_mail_function():
-    senderEmail = "robeehacks@gmail.com"
-    senderPassword = "1pa2345w"
+    senderEmail = "example@gmail.com"
+    senderPassword = "example"
     recipientEmail = "peacecyebukayire@gmail.com"
     recipientEmail = recipientEmail.lower()
     Email_subject = "Intruder Has Been Detected!"
@@ -40,7 +39,6 @@ class MotionDetection(object):
         success, frame2 = self.video.read()
         alarm_triggered = False
         email_sent = False
-        notify=False
 
         diff = cv2.absdiff(frame1,frame2)
         gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
@@ -53,10 +51,9 @@ class MotionDetection(object):
             (x, y, w, h) = cv2.boundingRect(contour)
         
             if cv2.contourArea(contour) > 4000:
-                notify = True
                 cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
                 cv2.putText(frame1, "Status: {}".format("Intruder"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-                insert_notification("finally sent notification", '2021-05-12 11:19:29', 1,1)
+                insert_notification("finally sent notification", '2021-05-12 11:19:29', 2,1)
                 #  with lock:
                 #  read_db_config("motion detected in class", '2021-05-12 11:19:29', 1,1)
                 #      if not email_sent:
