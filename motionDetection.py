@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 from notification import insert_notification
+
 def send_mail_function():
     senderEmail = "example@gmail.com"
     senderPassword = "example"
