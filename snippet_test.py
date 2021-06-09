@@ -74,3 +74,4 @@ class MotionDetection(object):
         success, frame2 = self.video.read()
         # ret, jpeg = cv2.imencode('.jpg', image)#incoding image to jpg for displaying the image correctly
         # return jpeg.tobytes()
+        
