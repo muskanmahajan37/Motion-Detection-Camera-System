@@ -37,7 +37,6 @@ def play_alarm_sound_function():
 
 class MotionDetection(object):
 
-
     def __init__(self):
         self.video = cv2.VideoCapture(0)
 
