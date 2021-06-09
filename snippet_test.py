@@ -2,6 +2,7 @@ import cv2
 import cv2
 import playsound
 import threading
+
 lock = threading.Lock() #This will help us perform synchronization; ex:to stop other threads from sending more emails
 
 from email.mime.multipart import MIMEMultipart
@@ -36,7 +37,6 @@ def play_alarm_sound_function():
 
 
 class MotionDetection(object):
-
 
     def __init__(self):
         self.video = cv2.VideoCapture(0)
