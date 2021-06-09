@@ -6,6 +6,7 @@ compared to traditional video surveillance systems.
 After some research, I came up with an algorithm which detected motion by comparing 
 each frame captured by the camera with the previous one. If the frames were more or less the same, 
 fine, but if they had differences above a certain limit, the program would trigger a motion detection event. 
+
 So, for every frame captured, I compared the pixels with the previous frame for brightness changes. 
 If the brightness change of a certain pixel exceeded a tolerance limit, the program would increment a counter. 
 At the end of the scan, it checked the value of the counter and if it exceeded a certain limit, it triggered a motion detection event. 
