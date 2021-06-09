@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 from notification import insert_notification
+# from session import curr_user
 
 def send_mail_function():
     senderEmail = "example@gmail.com"
@@ -54,7 +55,7 @@ class MotionDetection(object):
             if cv2.contourArea(contour) > 4000:
                 cv2.rectangle(frame1, (x,y), (x+w, y+h), (0, 255, 0), 2)
                 cv2.putText(frame1, "Status: {}".format("Intruder"), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-                insert_notification("finally sent notification", '2021-05-12 11:19:29', 2,1)
+                # insert_notification("An intruder detected!", '2021-05-12 11:19:29', 2,1)
                 
         ret, jpeg = cv2.imencode('.jpg', frame1)
         return jpeg.tobytes()

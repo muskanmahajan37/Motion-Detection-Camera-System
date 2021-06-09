@@ -6,7 +6,7 @@ from motionDetection import MotionDetection
 app=Flask(__name__)
 app.secret_key=os.urandom(24)
 
-conn=mysql.connector.connect(host="localhost", user="root",password="",database="MDCS")
+conn = mysql.connector.connect(host="localhost", user="root",password="",database="MDCS")
 cursor=conn.cursor()
 
 def gen(camera):
@@ -45,9 +45,9 @@ def login_validation():
 
     if len(users)>0:
         session['user_id']=users[0][0]
-        # print ("User id: " )
-        # print (session['user_id'])
         return render_template("index.html")
+        # return render_template("session.py")
+        # print("User Logged In Successfully")
     else:
         warning="Username or password is incorrect, try again!"
         return render_template("login.html", warning=warning)
