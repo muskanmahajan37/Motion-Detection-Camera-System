@@ -7,6 +7,7 @@ def read_db_config(filename='config.ini', section='mysql'):
 
     # get section, default to mysql
     db = {}
+    
     if parser.has_section(section):
         items = parser.items(section)
         for item in items:
