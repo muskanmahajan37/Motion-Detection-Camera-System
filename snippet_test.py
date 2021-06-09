@@ -16,6 +16,7 @@ def send_mail_function():
     Email_subject = "Intruder Has Been Detected!"
     Email_body = "Warning! An intruder has been reported in ABC Room"
     message = 'Subject: {}\n\n{}'.format(Email_subject, Email_body)
+    
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
