@@ -25,7 +25,7 @@ def send_mail_function():
         server.sendmail(senderEmail, recipientEmail, message)
         print("Warning message has been sent to {}".format(recipientEmail))
         server.close()
-        
+
     except Exception as e:
     	print(e)
 
@@ -34,7 +34,6 @@ def send_mail_function():
 def play_alarm_sound_function():
     	while True:
 		playsound.playsound('Alarm Sound.mp3',True)
-
 
 class MotionDetection(object):
 
