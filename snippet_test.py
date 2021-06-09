@@ -8,7 +8,6 @@ from email.mime.text import MIMEText
 import smtplib
 lock = threading.Lock() #This will help us perform synchronization; ex:to stop other threads from sending more emails
 
-
 def send_mail_function():
     senderEmail = "robeehacks@gmail.com"
     senderPassword = "1pa2345w"
