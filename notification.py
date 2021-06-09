@@ -19,6 +19,7 @@ def insert_notification(message,time, userID, camID):
             print('last insert id not found')
 
         conn.commit()
+        
     except Error as error:
         print(error)
 
