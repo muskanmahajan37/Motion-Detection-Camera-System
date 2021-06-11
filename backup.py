@@ -30,6 +30,7 @@ def send_mail_function():
         server.sendmail(senderEmail, recipientEmail, message)
         print("Warning message has been sent to {}".format(recipientEmail))
         server.close()
+        
     except Exception as e:
     	print(e)
 
